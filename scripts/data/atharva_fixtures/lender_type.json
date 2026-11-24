@@ -1,0 +1,32 @@
+[
+ {
+  "description": "Public sector banking institution in India.",
+  "docstatus": 0,
+  "doctype": "Lender Type",
+  "is_active": 1,
+  "lender_type_name": "Public Sector Bank",
+  "modified": "2026-11-23 12:20:31.462701",
+  "name": "Public Sector Bank",
+  "type_code": "PSB"
+ },
+ {
+  "description": "Privately owned banking institution in India.",
+  "docstatus": 0,
+  "doctype": "Lender Type",
+  "is_active": 1,
+  "lender_type_name": "Private Sector Bank",
+  "modified": "2026-11-23 12:20:46.859401",
+  "name": "Private Sector Bank",
+  "type_code": "PVT"
+ },
+ {
+  "description": "Company providing housing finance and home loan services in India.",
+  "docstatus": 0,
+  "doctype": "Lender Type",
+  "is_active": 1,
+  "lender_type_name": "Housing Finance Company",
+  "modified": "2026-11-23 12:21:02.227212",
+  "name": "Housing Finance Company",
+  "type_code": "HFC"
+ }
+]

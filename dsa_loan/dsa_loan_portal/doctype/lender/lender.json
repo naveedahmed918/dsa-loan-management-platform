@@ -1,0 +1,342 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "creation": "2026-11-24 10:12:37.427846",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "lender_name",
+  "lender_code",
+  "lender_type",
+  "registered_company_name",
+  "rbi_registration_number",
+  "column_break_1",
+  "pan",
+  "gstin",
+  "website",
+  "lender_status",
+  "section_break_1",
+  "head_office_address",
+  "contact_person",
+  "column_break_2",
+  "contact_number",
+  "official_email",
+  "section_break_2",
+  "erpnext_customer",
+  "auto_invoice_on_disbursement",
+  "column_break_3",
+  "invoice_email_group",
+  "invoice_email_template",
+  "invoice_cc",
+  "section_break_3",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "lender_name",
+   "fieldtype": "Data",
+   "label": "Lender Name",
+   "reqd": 1,
+   "unique": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "lender_code",
+   "fieldtype": "Data",
+   "label": "Lender Code",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "lender_type",
+   "fieldtype": "Link",
+   "label": "Lender Type",
+   "options": "Lender Type",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "registered_company_name",
+   "fieldtype": "Data",
+   "label": "Registered Company Name"
+  },
+  {
+   "fieldname": "rbi_registration_number",
+   "fieldtype": "Data",
+   "label": "RBI Registration Number"
+  },
+  {
+   "fieldtype": "Column Break",
+   "fieldname": "column_break_1"
+  },
+  {
+   "fieldname": "pan",
+   "fieldtype": "Data",
+   "label": "PAN",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "gstin",
+   "fieldtype": "Data",
+   "label": "GSTIN"
+  },
+  {
+   "fieldname": "website",
+   "fieldtype": "Data",
+   "label": "Website"
+  },
+  {
+   "fieldname": "lender_status",
+   "fieldtype": "Select",
+   "label": "Lender Status",
+   "options": "Active\nInactive\nSuspended",
+   "reqd": 1,
+   "default": "Active",
+   "in_list_view": 1
+  },
+  {
+   "fieldtype": "Section Break",
+   "label": "Contact",
+   "fieldname": "section_break_1"
+  },
+  {
+   "fieldname": "head_office_address",
+   "fieldtype": "Link",
+   "label": "Head Office Address",
+   "options": "Address"
+  },
+  {
+   "fieldname": "contact_person",
+   "fieldtype": "Data",
+   "label": "Contact Person"
+  },
+  {
+   "fieldtype": "Column Break",
+   "fieldname": "column_break_2"
+  },
+  {
+   "fieldname": "contact_number",
+   "fieldtype": "Data",
+   "label": "Contact Number"
+  },
+  {
+   "fieldname": "official_email",
+   "fieldtype": "Data",
+   "label": "Official Email",
+   "options": "Email"
+  },
+  {
+   "fieldtype": "Section Break",
+   "label": "Invoicing & Email",
+   "description": "Used when a loan is fully disbursed: a Sales Invoice is raised on the lender and emailed to the email group",
+   "fieldname": "section_break_2"
+  },
+  {
+   "fieldname": "erpnext_customer",
+   "fieldtype": "Link",
+   "label": "ERPNext Customer",
+   "options": "Customer",
+   "description": "Billing customer for Sales Invoices; created automatically if empty"
+  },
+  {
+   "fieldname": "auto_invoice_on_disbursement",
+   "fieldtype": "Check",
+   "label": "Auto Invoice on Disbursement",
+   "default": "1"
+  },
+  {
+   "fieldtype": "Column Break",
+   "fieldname": "column_break_3"
+  },
+  {
+   "fieldname": "invoice_email_group",
+   "fieldtype": "Link",
+   "label": "Invoice Email Group",
+   "options": "Email Group",
+   "description": "Everyone in this group (not unsubscribed) receives the invoice. Official Email is used only when no group is set"
+  },
+  {
+   "fieldname": "invoice_email_template",
+   "fieldtype": "Link",
+   "label": "Invoice Email Template",
+   "options": "Email Template",
+   "description": "Leave empty to use 'DSA Disbursement Invoice'"
+  },
+  {
+   "fieldname": "invoice_cc",
+   "fieldtype": "Small Text",
+   "label": "Invoice CC",
+   "description": "Extra addresses, comma separated"
+  },
+  {
+   "fieldtype": "Section Break",
+   "fieldname": "section_break_3"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "links": [
+  {
+   "link_doctype": "Loan Application",
+   "link_fieldname": "lender",
+   "group": "Loan"
+  },
+  {
+   "link_doctype": "Commission Calculation",
+   "link_fieldname": "lender",
+   "group": "Money"
+  },
+  {
+   "link_doctype": "Commission Clawback",
+   "link_fieldname": "lender",
+   "group": "Money"
+  },
+  {
+   "link_doctype": "Commission Invoice",
+   "link_fieldname": "lender",
+   "group": "Money"
+  },
+  {
+   "link_doctype": "Lender Payout Statement",
+   "link_fieldname": "lender",
+   "group": "Money"
+  },
+  {
+   "link_doctype": "Loan Disbursement",
+   "link_fieldname": "lender",
+   "group": "Money"
+  },
+  {
+   "link_doctype": "Commission Slab Structure",
+   "link_fieldname": "lender",
+   "group": "Lender"
+  },
+  {
+   "link_doctype": "Lender Branch",
+   "link_fieldname": "lender",
+   "group": "Lender"
+  },
+  {
+   "link_doctype": "Lender Document Rule",
+   "link_fieldname": "lender",
+   "group": "Lender"
+  },
+  {
+   "link_doctype": "Lender Login",
+   "link_fieldname": "lender",
+   "group": "Lender"
+  },
+  {
+   "link_doctype": "Loan Product",
+   "link_fieldname": "lender",
+   "group": "Lender"
+  },
+  {
+   "link_doctype": "Loan Scheme",
+   "link_fieldname": "lender",
+   "group": "Lender"
+  }
+ ],
+ "modified": "2026-11-24 10:12:37.427846",
+ "modified_by": "Administrator",
+ "module": "DSA Loan Portal",
+ "name": "Lender",
+ "owner": "Administrator",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "autoname": "field:lender_code",
+ "naming_rule": "By fieldname",
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "export": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "DSA Admin",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "export": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "Branch Manager",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "export": 1
+  },
+  {
+   "role": "DSA Agent",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  },
+  {
+   "role": "Document Verifier",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  },
+  {
+   "role": "DSA Accounts",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "export": 1
+  },
+  {
+   "role": "Franchise Partner",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  },
+  {
+   "role": "System Manager",
+   "permlevel": 1,
+   "read": 1,
+   "write": 1
+  },
+  {
+   "role": "DSA Admin",
+   "permlevel": 1,
+   "read": 1,
+   "write": 1
+  },
+  {
+   "role": "DSA Accounts",
+   "permlevel": 1,
+   "read": 1
+  }
+ ],
+ "title_field": "lender_name",
+ "show_title_field_in_link": 1,
+ "search_fields": "lender_name"
+}

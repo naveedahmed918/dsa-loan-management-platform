@@ -1,0 +1,293 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "creation": "2026-11-24 10:12:37.427846",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "product_name",
+  "product_code",
+  "lender",
+  "loan_category",
+  "is_active",
+  "section_break_1",
+  "minimum_loan_amount",
+  "maximum_loan_amount",
+  "minimum_tenure_months",
+  "maximum_tenure_months",
+  "column_break_1",
+  "minimum_interest_rate",
+  "maximum_interest_rate",
+  "interest_type",
+  "repayment_type",
+  "section_break_2",
+  "processing_fee_type",
+  "processing_fee",
+  "minimum_processing_fee",
+  "maximum_processing_fee",
+  "column_break_2",
+  "effective_from",
+  "effective_to",
+  "rates_as_on",
+  "rate_source",
+  "section_break_3",
+  "product_description"
+ ],
+ "fields": [
+  {
+   "fieldname": "product_name",
+   "fieldtype": "Data",
+   "label": "Product Name",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "product_code",
+   "fieldtype": "Data",
+   "label": "Product Code",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "lender",
+   "fieldtype": "Link",
+   "label": "Lender",
+   "options": "Lender",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "loan_category",
+   "fieldtype": "Select",
+   "label": "Loan Category",
+   "options": "Home Purchase\nHome Loan\nHome Improvement\nLoan Against Property\nBalance Transfer\nPlot Purchase\nPlot + Construction",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Is Active",
+   "default": "1"
+  },
+  {
+   "fieldtype": "Section Break",
+   "label": "Limits",
+   "fieldname": "section_break_1"
+  },
+  {
+   "fieldname": "minimum_loan_amount",
+   "fieldtype": "Currency",
+   "label": "Minimum Loan Amount"
+  },
+  {
+   "fieldname": "maximum_loan_amount",
+   "fieldtype": "Currency",
+   "label": "Maximum Loan Amount"
+  },
+  {
+   "fieldname": "minimum_tenure_months",
+   "fieldtype": "Int",
+   "label": "Minimum Tenure Months"
+  },
+  {
+   "fieldname": "maximum_tenure_months",
+   "fieldtype": "Int",
+   "label": "Maximum Tenure Months"
+  },
+  {
+   "fieldtype": "Column Break",
+   "fieldname": "column_break_1"
+  },
+  {
+   "fieldname": "minimum_interest_rate",
+   "fieldtype": "Percent",
+   "label": "Minimum Interest Rate"
+  },
+  {
+   "fieldname": "maximum_interest_rate",
+   "fieldtype": "Percent",
+   "label": "Maximum Interest Rate"
+  },
+  {
+   "fieldname": "interest_type",
+   "fieldtype": "Select",
+   "label": "Interest Type",
+   "options": "\nFixed\nFloating\nHybrid"
+  },
+  {
+   "fieldname": "repayment_type",
+   "fieldtype": "Select",
+   "label": "Repayment Type",
+   "options": "\nEMI\nOther"
+  },
+  {
+   "fieldtype": "Section Break",
+   "label": "Fees & Validity",
+   "fieldname": "section_break_2"
+  },
+  {
+   "fieldname": "processing_fee_type",
+   "fieldtype": "Select",
+   "label": "Processing Fee Type",
+   "options": "\nFixed\nPercentage"
+  },
+  {
+   "fieldname": "processing_fee",
+   "fieldtype": "Currency",
+   "label": "Processing Fee",
+   "description": "Rupees for Fixed; percent of the loan amount for Percentage"
+  },
+  {
+   "fieldname": "minimum_processing_fee",
+   "fieldtype": "Currency",
+   "label": "Minimum Processing Fee",
+   "depends_on": "eval:doc.processing_fee_type=='Percentage'"
+  },
+  {
+   "fieldname": "maximum_processing_fee",
+   "fieldtype": "Currency",
+   "label": "Maximum Processing Fee",
+   "depends_on": "eval:doc.processing_fee_type=='Percentage'"
+  },
+  {
+   "fieldtype": "Column Break",
+   "fieldname": "column_break_2"
+  },
+  {
+   "fieldname": "effective_from",
+   "fieldtype": "Date",
+   "label": "Effective From"
+  },
+  {
+   "fieldname": "effective_to",
+   "fieldtype": "Date",
+   "label": "Effective To"
+  },
+  {
+   "fieldname": "rates_as_on",
+   "fieldtype": "Date",
+   "label": "Rates As On",
+   "description": "Date of the bank's published rate card these figures come from"
+  },
+  {
+   "fieldname": "rate_source",
+   "fieldtype": "Data",
+   "label": "Rate Source",
+   "description": "Link to the bank's published rates / charges"
+  },
+  {
+   "fieldtype": "Section Break",
+   "fieldname": "section_break_3"
+  },
+  {
+   "fieldname": "product_description",
+   "fieldtype": "Small Text",
+   "label": "Product Description"
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "links": [
+  {
+   "link_doctype": "Loan Application",
+   "link_fieldname": "loan_product",
+   "group": "Loan"
+  },
+  {
+   "link_doctype": "Commission Slab Structure",
+   "link_fieldname": "loan_product",
+   "group": "Lender"
+  },
+  {
+   "link_doctype": "Lender Document Rule",
+   "link_fieldname": "loan_product",
+   "group": "Lender"
+  },
+  {
+   "link_doctype": "Loan Scheme",
+   "link_fieldname": "loan_product",
+   "group": "Lender"
+  }
+ ],
+ "modified": "2026-11-24 10:12:37.427846",
+ "modified_by": "Administrator",
+ "module": "DSA Loan Portal",
+ "name": "Loan Product",
+ "owner": "Administrator",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "autoname": "field:product_code",
+ "naming_rule": "By fieldname",
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "export": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "DSA Admin",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "export": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "Branch Manager",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "export": 1
+  },
+  {
+   "role": "DSA Agent",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  },
+  {
+   "role": "Document Verifier",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  },
+  {
+   "role": "DSA Accounts",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "export": 1
+  },
+  {
+   "role": "Franchise Partner",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  }
+ ],
+ "title_field": "product_name",
+ "show_title_field_in_link": 1,
+ "search_fields": "product_name,lender"
+}

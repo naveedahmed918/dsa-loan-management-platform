@@ -1,0 +1,265 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "creation": "2026-11-24 10:12:37.427846",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "franchise_name",
+  "franchise_code",
+  "franchise_owner",
+  "company",
+  "owner_employee",
+  "column_break_1",
+  "contact_number",
+  "email",
+  "registered_address",
+  "franchise_status",
+  "section_break_1",
+  "pan",
+  "gstin",
+  "column_break_2",
+  "agreement_start_date",
+  "agreement_end_date",
+  "settlement_percentage",
+  "section_break_2",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "franchise_name",
+   "fieldtype": "Data",
+   "label": "Franchise Name",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "franchise_code",
+   "fieldtype": "Data",
+   "label": "Franchise Code",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "franchise_owner",
+   "fieldtype": "Data",
+   "label": "Franchise Owner",
+   "reqd": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "owner_employee",
+   "fieldtype": "Link",
+   "label": "Owner Employee",
+   "options": "Employee"
+  },
+  {
+   "fieldtype": "Column Break",
+   "fieldname": "column_break_1"
+  },
+  {
+   "fieldname": "contact_number",
+   "fieldtype": "Data",
+   "label": "Contact Number",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "registered_address",
+   "fieldtype": "Link",
+   "label": "Registered Address",
+   "options": "Address"
+  },
+  {
+   "fieldname": "franchise_status",
+   "fieldtype": "Select",
+   "label": "Franchise Status",
+   "options": "Active\nInactive\nSuspended\nTerminated",
+   "reqd": 1,
+   "default": "Active",
+   "in_list_view": 1
+  },
+  {
+   "fieldtype": "Section Break",
+   "label": "Tax & Agreement",
+   "fieldname": "section_break_1"
+  },
+  {
+   "fieldname": "pan",
+   "fieldtype": "Data",
+   "label": "PAN",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "gstin",
+   "fieldtype": "Data",
+   "label": "GSTIN"
+  },
+  {
+   "fieldtype": "Column Break",
+   "fieldname": "column_break_2"
+  },
+  {
+   "fieldname": "agreement_start_date",
+   "fieldtype": "Date",
+   "label": "Agreement Start Date"
+  },
+  {
+   "fieldname": "agreement_end_date",
+   "fieldtype": "Date",
+   "label": "Agreement End Date"
+  },
+  {
+   "fieldname": "settlement_percentage",
+   "fieldtype": "Percent",
+   "label": "Settlement Percentage"
+  },
+  {
+   "fieldtype": "Section Break",
+   "fieldname": "section_break_2"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "links": [
+  {
+   "link_doctype": "Loan Application",
+   "link_fieldname": "franchise",
+   "group": "Loan"
+  },
+  {
+   "link_doctype": "Commission Calculation",
+   "link_fieldname": "franchise",
+   "group": "Money"
+  },
+  {
+   "link_doctype": "Franchise Settlement",
+   "link_fieldname": "franchise",
+   "group": "Money"
+  },
+  {
+   "link_doctype": "DSA Branch",
+   "link_fieldname": "franchise",
+   "group": "DSA"
+  }
+ ],
+ "modified": "2026-11-24 10:12:37.427846",
+ "modified_by": "Administrator",
+ "module": "DSA Loan Portal",
+ "name": "Franchise",
+ "owner": "Administrator",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "autoname": "field:franchise_code",
+ "naming_rule": "By fieldname",
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "export": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "DSA Admin",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "export": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "Branch Manager",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "export": 1
+  },
+  {
+   "role": "DSA Agent",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  },
+  {
+   "role": "Document Verifier",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  },
+  {
+   "role": "DSA Accounts",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "export": 1
+  },
+  {
+   "role": "Franchise Partner",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  },
+  {
+   "role": "System Manager",
+   "permlevel": 1,
+   "read": 1,
+   "write": 1
+  },
+  {
+   "role": "DSA Admin",
+   "permlevel": 1,
+   "read": 1,
+   "write": 1
+  },
+  {
+   "role": "DSA Accounts",
+   "permlevel": 1,
+   "read": 1
+  },
+  {
+   "role": "Franchise Partner",
+   "permlevel": 1,
+   "read": 1
+  }
+ ],
+ "title_field": "franchise_name",
+ "show_title_field_in_link": 1,
+ "search_fields": "franchise_name,franchise_owner"
+}

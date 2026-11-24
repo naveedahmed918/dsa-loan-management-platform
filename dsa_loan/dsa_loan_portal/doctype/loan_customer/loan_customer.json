@@ -1,0 +1,461 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "creation": "2026-11-24 10:12:37.427846",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "customer_name",
+  "mobile_number",
+  "alternate_mobile",
+  "email",
+  "column_break_1",
+  "date_of_birth",
+  "gender",
+  "marital_status",
+  "customer_category",
+  "kyc_status",
+  "customer_status",
+  "dsa_branch",
+  "section_break_1",
+  "kyc_consent",
+  "consent_mode",
+  "column_break_2",
+  "consent_date",
+  "consent_proof",
+  "section_break_2",
+  "pan",
+  "column_break_3",
+  "aadhaar_number",
+  "section_break_3",
+  "cibil_score",
+  "cibil_report_date",
+  "column_break_4",
+  "cibil_report",
+  "section_break_4",
+  "employment_type",
+  "employer_business_name",
+  "designation",
+  "column_break_5",
+  "monthly_income",
+  "other_monthly_income",
+  "existing_emi",
+  "section_break_5",
+  "residential_address",
+  "column_break_6",
+  "permanent_address",
+  "section_break_6",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "mobile_number",
+   "fieldtype": "Data",
+   "label": "Mobile Number",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "alternate_mobile",
+   "fieldtype": "Data",
+   "label": "Alternate Mobile"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "options": "Email"
+  },
+  {
+   "fieldtype": "Column Break",
+   "fieldname": "column_break_1"
+  },
+  {
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "label": "Date Of Birth"
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Select",
+   "label": "Gender",
+   "options": "\nMale\nFemale\nOther\nPrefer not to say"
+  },
+  {
+   "fieldname": "marital_status",
+   "fieldtype": "Select",
+   "label": "Marital Status",
+   "options": "\nSingle\nMarried\nDivorced\nWidowed"
+  },
+  {
+   "fieldname": "customer_category",
+   "fieldtype": "Select",
+   "label": "Customer Category",
+   "options": "\nResident Individual\nNRI\nCompany"
+  },
+  {
+   "fieldname": "kyc_status",
+   "fieldtype": "Select",
+   "label": "KYC Status",
+   "options": "Pending\nIn Progress\nVerified\nRejected",
+   "reqd": 1,
+   "default": "Pending",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "customer_status",
+   "fieldtype": "Select",
+   "label": "Customer Status",
+   "options": "Active\nInactive\nBlacklisted",
+   "reqd": 1,
+   "default": "Active"
+  },
+  {
+   "fieldname": "dsa_branch",
+   "fieldtype": "Link",
+   "label": "DSA Branch",
+   "options": "DSA Branch",
+   "description": "Branch that sourced this customer; limits who can see the record"
+  },
+  {
+   "fieldtype": "Section Break",
+   "label": "Consent",
+   "fieldname": "section_break_1"
+  },
+  {
+   "fieldname": "kyc_consent",
+   "fieldtype": "Check",
+   "label": "KYC & Credit Check Consent",
+   "description": "Customer agreed to KYC verification, a credit bureau check and sharing data with lenders"
+  },
+  {
+   "fieldname": "consent_mode",
+   "fieldtype": "Select",
+   "label": "Consent Mode",
+   "options": "\nSigned Form\nOTP\nEmail\nRecorded Call",
+   "depends_on": "eval:doc.kyc_consent",
+   "mandatory_depends_on": "eval:doc.kyc_consent"
+  },
+  {
+   "fieldtype": "Column Break",
+   "fieldname": "column_break_2"
+  },
+  {
+   "fieldname": "consent_date",
+   "fieldtype": "Datetime",
+   "label": "Consent Date",
+   "read_only": 1,
+   "depends_on": "eval:doc.kyc_consent"
+  },
+  {
+   "fieldname": "consent_proof",
+   "fieldtype": "Attach",
+   "label": "Consent Proof",
+   "depends_on": "eval:doc.kyc_consent"
+  },
+  {
+   "fieldtype": "Section Break",
+   "label": "Identity (restricted)",
+   "fieldname": "section_break_2"
+  },
+  {
+   "fieldname": "pan",
+   "fieldtype": "Data",
+   "label": "PAN",
+   "unique": 1,
+   "permlevel": 1
+  },
+  {
+   "fieldtype": "Column Break",
+   "fieldname": "column_break_3"
+  },
+  {
+   "fieldname": "aadhaar_number",
+   "fieldtype": "Data",
+   "label": "Aadhaar Number (masked)",
+   "permlevel": 1,
+   "description": "Type the 12 digits; only the last 4 are kept (XXXX-XXXX-1234)"
+  },
+  {
+   "fieldtype": "Section Break",
+   "label": "Credit Bureau (restricted)",
+   "fieldname": "section_break_3"
+  },
+  {
+   "fieldname": "cibil_score",
+   "fieldtype": "Int",
+   "label": "CIBIL Score",
+   "permlevel": 1,
+   "description": "300 to 900, or -1 for no credit history"
+  },
+  {
+   "fieldname": "cibil_report_date",
+   "fieldtype": "Date",
+   "label": "CIBIL Report Date",
+   "permlevel": 1
+  },
+  {
+   "fieldtype": "Column Break",
+   "fieldname": "column_break_4"
+  },
+  {
+   "fieldname": "cibil_report",
+   "fieldtype": "Attach",
+   "label": "CIBIL Report",
+   "permlevel": 1
+  },
+  {
+   "fieldtype": "Section Break",
+   "label": "Employment & Income",
+   "fieldname": "section_break_4"
+  },
+  {
+   "fieldname": "employment_type",
+   "fieldtype": "Select",
+   "label": "Employment Type",
+   "options": "\nSalaried\nSelf Employed\nBusiness Owner\nProfessional"
+  },
+  {
+   "fieldname": "employer_business_name",
+   "fieldtype": "Data",
+   "label": "Employer / Business Name"
+  },
+  {
+   "fieldname": "designation",
+   "fieldtype": "Data",
+   "label": "Designation"
+  },
+  {
+   "fieldtype": "Column Break",
+   "fieldname": "column_break_5"
+  },
+  {
+   "fieldname": "monthly_income",
+   "fieldtype": "Currency",
+   "label": "Monthly Income",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "other_monthly_income",
+   "fieldtype": "Currency",
+   "label": "Other Monthly Income",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "existing_emi",
+   "fieldtype": "Currency",
+   "label": "Existing EMI",
+   "permlevel": 1
+  },
+  {
+   "fieldtype": "Section Break",
+   "label": "Address",
+   "fieldname": "section_break_5"
+  },
+  {
+   "fieldname": "residential_address",
+   "fieldtype": "Link",
+   "label": "Residential Address",
+   "options": "Address"
+  },
+  {
+   "fieldtype": "Column Break",
+   "fieldname": "column_break_6"
+  },
+  {
+   "fieldname": "permanent_address",
+   "fieldtype": "Link",
+   "label": "Permanent Address",
+   "options": "Address"
+  },
+  {
+   "fieldtype": "Section Break",
+   "fieldname": "section_break_6"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "links": [
+  {
+   "link_doctype": "Document Checklist",
+   "link_fieldname": "applicant",
+   "group": "Loan"
+  },
+  {
+   "link_doctype": "Loan Application",
+   "link_fieldname": "primary_customer",
+   "group": "Loan"
+  },
+  {
+   "link_doctype": "Aadhaar Card Data",
+   "link_fieldname": "applicant",
+   "group": "Documents"
+  },
+  {
+   "link_doctype": "Address Proof Data",
+   "link_fieldname": "applicant",
+   "group": "Documents"
+  },
+  {
+   "link_doctype": "Bank Statement Data",
+   "link_fieldname": "applicant",
+   "group": "Documents"
+  },
+  {
+   "link_doctype": "Form 16 Data",
+   "link_fieldname": "applicant",
+   "group": "Documents"
+  },
+  {
+   "link_doctype": "ITR Data",
+   "link_fieldname": "applicant",
+   "group": "Documents"
+  },
+  {
+   "link_doctype": "PAN Card Data",
+   "link_fieldname": "applicant",
+   "group": "Documents"
+  },
+  {
+   "link_doctype": "Salary Slip Data",
+   "link_fieldname": "applicant",
+   "group": "Documents"
+  }
+ ],
+ "modified": "2026-11-24 10:12:37.427846",
+ "modified_by": "Administrator",
+ "module": "DSA Loan Portal",
+ "name": "Loan Customer",
+ "owner": "Administrator",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "autoname": "CUST-.YYYY.-.#####",
+ "naming_rule": "Expression (old style)",
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "export": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "DSA Admin",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "export": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "Branch Manager",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "export": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "DSA Agent",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "write": 1,
+   "create": 1
+  },
+  {
+   "role": "Franchise Partner",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "write": 1,
+   "create": 1
+  },
+  {
+   "role": "Document Verifier",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  },
+  {
+   "role": "DSA Accounts",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "export": 1
+  },
+  {
+   "role": "System Manager",
+   "permlevel": 1,
+   "read": 1,
+   "write": 1
+  },
+  {
+   "role": "DSA Admin",
+   "permlevel": 1,
+   "read": 1,
+   "write": 1
+  },
+  {
+   "role": "Branch Manager",
+   "permlevel": 1,
+   "read": 1,
+   "write": 1
+  },
+  {
+   "role": "DSA Agent",
+   "permlevel": 1,
+   "read": 1,
+   "write": 1
+  },
+  {
+   "role": "Franchise Partner",
+   "permlevel": 1,
+   "read": 1,
+   "write": 1
+  },
+  {
+   "role": "Document Verifier",
+   "permlevel": 1,
+   "read": 1,
+   "write": 1
+  }
+ ],
+ "track_changes": 1,
+ "title_field": "customer_name",
+ "show_title_field_in_link": 1,
+ "search_fields": "customer_name,mobile_number"
+}

@@ -1,0 +1,272 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "creation": "2026-11-24 10:12:37.427846",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "loan_application",
+  "loan_disbursement",
+  "lender",
+  "commission_slab",
+  "company",
+  "column_break_1",
+  "franchise",
+  "dsa_branch",
+  "assigned_agent",
+  "calculation_date",
+  "calculation_status",
+  "section_break_1",
+  "commission_basis_amount",
+  "commission_percentage",
+  "fixed_commission",
+  "gross_commission",
+  "column_break_2",
+  "gst_rate",
+  "gst_amount",
+  "tds_rate",
+  "tds_amount",
+  "other_deductions",
+  "net_commission",
+  "payout_statement",
+  "section_break_2",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "loan_application",
+   "fieldtype": "Link",
+   "label": "Loan Application",
+   "options": "Loan Application",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "loan_disbursement",
+   "fieldtype": "Link",
+   "label": "Loan Disbursement",
+   "options": "Loan Disbursement",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "lender",
+   "fieldtype": "Link",
+   "label": "Lender",
+   "options": "Lender",
+   "reqd": 1,
+   "read_only": 1,
+   "fetch_from": "loan_application.lender"
+  },
+  {
+   "fieldname": "commission_slab",
+   "fieldtype": "Link",
+   "label": "Commission Slab",
+   "options": "Commission Slab Structure",
+   "reqd": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1,
+   "read_only": 1,
+   "fetch_from": "loan_application.company"
+  },
+  {
+   "fieldtype": "Column Break",
+   "fieldname": "column_break_1"
+  },
+  {
+   "fieldname": "franchise",
+   "fieldtype": "Link",
+   "label": "Franchise",
+   "options": "Franchise",
+   "read_only": 1,
+   "fetch_from": "loan_application.franchise"
+  },
+  {
+   "fieldname": "dsa_branch",
+   "fieldtype": "Link",
+   "label": "DSA Branch",
+   "options": "DSA Branch",
+   "reqd": 1,
+   "read_only": 1,
+   "fetch_from": "loan_application.dsa_branch"
+  },
+  {
+   "fieldname": "assigned_agent",
+   "fieldtype": "Link",
+   "label": "Assigned Agent",
+   "options": "Employee",
+   "read_only": 1,
+   "fetch_from": "loan_application.assigned_agent"
+  },
+  {
+   "fieldname": "calculation_date",
+   "fieldtype": "Date",
+   "label": "Calculation Date",
+   "reqd": 1,
+   "default": "Today"
+  },
+  {
+   "fieldname": "calculation_status",
+   "fieldtype": "Select",
+   "label": "Calculation Status",
+   "options": "Draft\nCalculated\nApproved\nInvoiced\nPartially Paid\nPaid\nReversed",
+   "reqd": 1,
+   "default": "Draft",
+   "in_list_view": 1
+  },
+  {
+   "fieldtype": "Section Break",
+   "label": "Commission",
+   "fieldname": "section_break_1"
+  },
+  {
+   "fieldname": "commission_basis_amount",
+   "fieldtype": "Currency",
+   "label": "Commission Basis Amount",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "commission_percentage",
+   "fieldtype": "Percent",
+   "label": "Commission Percentage"
+  },
+  {
+   "fieldname": "fixed_commission",
+   "fieldtype": "Currency",
+   "label": "Fixed Commission"
+  },
+  {
+   "fieldname": "gross_commission",
+   "fieldtype": "Currency",
+   "label": "Gross Commission",
+   "reqd": 1,
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldtype": "Column Break",
+   "fieldname": "column_break_2"
+  },
+  {
+   "fieldname": "gst_rate",
+   "fieldtype": "Percent",
+   "label": "GST Rate"
+  },
+  {
+   "fieldname": "gst_amount",
+   "fieldtype": "Currency",
+   "label": "GST Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "tds_rate",
+   "fieldtype": "Percent",
+   "label": "TDS Rate"
+  },
+  {
+   "fieldname": "tds_amount",
+   "fieldtype": "Currency",
+   "label": "TDS Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "other_deductions",
+   "fieldtype": "Currency",
+   "label": "Other Deductions"
+  },
+  {
+   "fieldname": "net_commission",
+   "fieldtype": "Currency",
+   "label": "Net Commission",
+   "reqd": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "payout_statement",
+   "fieldtype": "Link",
+   "label": "Payout Statement",
+   "options": "Lender Payout Statement",
+   "read_only": 1,
+   "description": "The lender payout statement that covers this commission"
+  },
+  {
+   "fieldtype": "Section Break",
+   "fieldname": "section_break_2"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "links": [
+  {
+   "link_doctype": "Commission Clawback",
+   "link_fieldname": "commission_calculation",
+   "group": "Money"
+  }
+ ],
+ "modified": "2026-11-24 10:12:37.427846",
+ "modified_by": "Administrator",
+ "module": "DSA Loan Portal",
+ "name": "Commission Calculation",
+ "owner": "Administrator",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "autoname": "COMM-.YYYY.-.#####",
+ "naming_rule": "Expression (old style)",
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "export": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "DSA Admin",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "export": 1
+  },
+  {
+   "role": "DSA Accounts",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "export": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "Branch Manager",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "export": 1
+  }
+ ],
+ "track_changes": 1,
+ "search_fields": "loan_disbursement,lender"
+}

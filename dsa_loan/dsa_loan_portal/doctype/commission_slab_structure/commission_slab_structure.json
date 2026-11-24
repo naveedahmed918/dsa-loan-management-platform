@@ -1,0 +1,212 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "creation": "2026-11-24 10:12:37.427846",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "slab_name",
+  "lender",
+  "loan_product",
+  "loan_scheme",
+  "column_break_1",
+  "calculation_basis",
+  "commission_percentage",
+  "gst_rate",
+  "tds_rate",
+  "section_break_1",
+  "clawback_window_months",
+  "column_break_2",
+  "clawback_percentage",
+  "section_break_2",
+  "effective_from",
+  "effective_to",
+  "slab_status",
+  "section_break_3",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "slab_name",
+   "fieldtype": "Data",
+   "label": "Slab Name",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "lender",
+   "fieldtype": "Link",
+   "label": "Lender",
+   "options": "Lender",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "loan_product",
+   "fieldtype": "Link",
+   "label": "Loan Product",
+   "options": "Loan Product",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "loan_scheme",
+   "fieldtype": "Link",
+   "label": "Loan Scheme",
+   "options": "Loan Scheme"
+  },
+  {
+   "fieldtype": "Column Break",
+   "fieldname": "column_break_1"
+  },
+  {
+   "fieldname": "calculation_basis",
+   "fieldtype": "Select",
+   "label": "Calculation Basis",
+   "options": "Disbursed Amount\nSanctioned Amount\nFixed Amount",
+   "reqd": 1,
+   "default": "Disbursed Amount"
+  },
+  {
+   "fieldname": "commission_percentage",
+   "fieldtype": "Percent",
+   "label": "Commission %",
+   "description": "Agreed payout; copied into each new Commission Calculation (still editable there)"
+  },
+  {
+   "fieldname": "gst_rate",
+   "fieldtype": "Percent",
+   "label": "GST Rate",
+   "default": "18",
+   "description": "GST charged on the commission; copied into each new Commission Calculation"
+  },
+  {
+   "fieldname": "tds_rate",
+   "fieldtype": "Percent",
+   "label": "TDS Rate",
+   "default": "2",
+   "description": "TDS the lender deducts (section 194H); copied into each new Commission Calculation"
+  },
+  {
+   "fieldtype": "Section Break",
+   "label": "Clawback",
+   "description": "If the loan is closed within this many months of disbursement, a Commission Clawback is created automatically",
+   "fieldname": "section_break_1"
+  },
+  {
+   "fieldname": "clawback_window_months",
+   "fieldtype": "Int",
+   "label": "Clawback Window (Months)"
+  },
+  {
+   "fieldtype": "Column Break",
+   "fieldname": "column_break_2"
+  },
+  {
+   "fieldname": "clawback_percentage",
+   "fieldtype": "Percent",
+   "label": "Clawback %",
+   "depends_on": "eval:doc.clawback_window_months"
+  },
+  {
+   "fieldtype": "Section Break",
+   "fieldname": "section_break_2"
+  },
+  {
+   "fieldname": "effective_from",
+   "fieldtype": "Date",
+   "label": "Effective From",
+   "reqd": 1
+  },
+  {
+   "fieldname": "effective_to",
+   "fieldtype": "Date",
+   "label": "Effective To"
+  },
+  {
+   "fieldname": "slab_status",
+   "fieldtype": "Select",
+   "label": "Slab Status",
+   "options": "Draft\nActive\nInactive\nExpired",
+   "reqd": 1,
+   "default": "Draft",
+   "in_list_view": 1
+  },
+  {
+   "fieldtype": "Section Break",
+   "fieldname": "section_break_3"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "links": [
+  {
+   "link_doctype": "Commission Calculation",
+   "link_fieldname": "commission_slab",
+   "group": "Money"
+  }
+ ],
+ "modified": "2026-11-24 10:12:37.427846",
+ "modified_by": "Administrator",
+ "module": "DSA Loan Portal",
+ "name": "Commission Slab Structure",
+ "owner": "Administrator",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "autoname": "CSS-.#####",
+ "naming_rule": "Expression (old style)",
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "export": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "DSA Admin",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "export": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "DSA Accounts",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "export": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "Branch Manager",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "export": 1
+  }
+ ],
+ "title_field": "slab_name",
+ "show_title_field_in_link": 1,
+ "search_fields": "slab_name,lender"
+}

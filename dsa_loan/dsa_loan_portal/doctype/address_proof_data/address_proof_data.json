@@ -1,0 +1,193 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "creation": "2026-11-24 10:12:37.427846",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "document_checklist",
+  "loan_application",
+  "applicant",
+  "dsa_branch",
+  "source_file",
+  "column_break_1",
+  "extraction_status",
+  "extracted_on",
+  "section_break_1",
+  "proof_type",
+  "name_on_document",
+  "address",
+  "document_date",
+  "valid_till"
+ ],
+ "fields": [
+  {
+   "fieldname": "document_checklist",
+   "fieldtype": "Link",
+   "label": "Document Checklist",
+   "options": "Document Checklist",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "loan_application",
+   "fieldtype": "Link",
+   "label": "Loan Application",
+   "options": "Loan Application",
+   "read_only": 1,
+   "fetch_from": "document_checklist.loan_application"
+  },
+  {
+   "fieldname": "applicant",
+   "fieldtype": "Link",
+   "label": "Applicant",
+   "options": "Loan Customer",
+   "read_only": 1,
+   "fetch_from": "document_checklist.applicant",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "dsa_branch",
+   "fieldtype": "Link",
+   "label": "DSA Branch",
+   "options": "DSA Branch",
+   "read_only": 1,
+   "fetch_from": "document_checklist.dsa_branch"
+  },
+  {
+   "fieldname": "source_file",
+   "fieldtype": "Attach",
+   "label": "Source File"
+  },
+  {
+   "fieldtype": "Column Break",
+   "fieldname": "column_break_1"
+  },
+  {
+   "fieldname": "extraction_status",
+   "fieldtype": "Select",
+   "label": "Extraction Status",
+   "options": "Pending\nExtracted\nVerified\nFailed",
+   "reqd": 1,
+   "default": "Pending",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "extracted_on",
+   "fieldtype": "Datetime",
+   "label": "Extracted On"
+  },
+  {
+   "fieldtype": "Section Break",
+   "label": "Extracted Data",
+   "fieldname": "section_break_1"
+  },
+  {
+   "fieldname": "proof_type",
+   "fieldtype": "Select",
+   "label": "Proof Type",
+   "options": "Passport\nVoter ID\nDriving Licence\nUtility Bill\nRent Agreement\nOther"
+  },
+  {
+   "fieldname": "name_on_document",
+   "fieldtype": "Data",
+   "label": "Name On Document"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Address"
+  },
+  {
+   "fieldname": "document_date",
+   "fieldtype": "Date",
+   "label": "Document Date"
+  },
+  {
+   "fieldname": "valid_till",
+   "fieldtype": "Date",
+   "label": "Valid Till"
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "links": [],
+ "modified": "2026-11-24 10:12:37.427846",
+ "modified_by": "Administrator",
+ "module": "DSA Loan Portal",
+ "name": "Address Proof Data",
+ "owner": "Administrator",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "autoname": "ADDR-.#####",
+ "naming_rule": "Expression (old style)",
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "export": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "DSA Admin",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "export": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "Branch Manager",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "export": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "DSA Agent",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "write": 1,
+   "create": 1
+  },
+  {
+   "role": "Franchise Partner",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "write": 1,
+   "create": 1
+  },
+  {
+   "role": "Document Verifier",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "write": 1,
+   "create": 1
+  }
+ ],
+ "search_fields": "applicant"
+}

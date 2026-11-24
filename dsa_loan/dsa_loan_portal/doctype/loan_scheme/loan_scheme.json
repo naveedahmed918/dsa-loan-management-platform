@@ -1,0 +1,279 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "creation": "2026-11-24 10:12:37.427846",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "scheme_name",
+  "scheme_code",
+  "lender",
+  "loan_product",
+  "column_break_1",
+  "effective_from",
+  "effective_to",
+  "scheme_status",
+  "scheme_description",
+  "section_break_1",
+  "applicant_category",
+  "minimum_age",
+  "maximum_age",
+  "minimum_monthly_income",
+  "minimum_credit_score",
+  "maximum_ltv",
+  "maximum_foir",
+  "column_break_2",
+  "minimum_loan_amount",
+  "maximum_loan_amount",
+  "minimum_interest_rate",
+  "maximum_interest_rate",
+  "minimum_tenure_months",
+  "maximum_tenure_months",
+  "section_break_2",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "scheme_name",
+   "fieldtype": "Data",
+   "label": "Scheme Name",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "scheme_code",
+   "fieldtype": "Data",
+   "label": "Scheme Code",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "lender",
+   "fieldtype": "Link",
+   "label": "Lender",
+   "options": "Lender",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "loan_product",
+   "fieldtype": "Link",
+   "label": "Loan Product",
+   "options": "Loan Product",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldtype": "Column Break",
+   "fieldname": "column_break_1"
+  },
+  {
+   "fieldname": "effective_from",
+   "fieldtype": "Date",
+   "label": "Effective From",
+   "reqd": 1
+  },
+  {
+   "fieldname": "effective_to",
+   "fieldtype": "Date",
+   "label": "Effective To"
+  },
+  {
+   "fieldname": "scheme_status",
+   "fieldtype": "Select",
+   "label": "Scheme Status",
+   "options": "Draft\nActive\nInactive\nExpired",
+   "reqd": 1,
+   "default": "Draft",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "scheme_description",
+   "fieldtype": "Small Text",
+   "label": "Scheme Description"
+  },
+  {
+   "fieldtype": "Section Break",
+   "label": "Eligibility",
+   "fieldname": "section_break_1"
+  },
+  {
+   "fieldname": "applicant_category",
+   "fieldtype": "Select",
+   "label": "Applicant Category",
+   "options": "\nSalaried\nSelf Employed\nBusiness Owner\nProfessional\nAll"
+  },
+  {
+   "fieldname": "minimum_age",
+   "fieldtype": "Int",
+   "label": "Minimum Age"
+  },
+  {
+   "fieldname": "maximum_age",
+   "fieldtype": "Int",
+   "label": "Maximum Age"
+  },
+  {
+   "fieldname": "minimum_monthly_income",
+   "fieldtype": "Currency",
+   "label": "Minimum Monthly Income"
+  },
+  {
+   "fieldname": "minimum_credit_score",
+   "fieldtype": "Int",
+   "label": "Minimum Credit Score"
+  },
+  {
+   "fieldname": "maximum_ltv",
+   "fieldtype": "Percent",
+   "label": "Maximum LTV"
+  },
+  {
+   "fieldname": "maximum_foir",
+   "fieldtype": "Percent",
+   "label": "Maximum FOIR"
+  },
+  {
+   "fieldtype": "Column Break",
+   "fieldname": "column_break_2"
+  },
+  {
+   "fieldname": "minimum_loan_amount",
+   "fieldtype": "Currency",
+   "label": "Minimum Loan Amount"
+  },
+  {
+   "fieldname": "maximum_loan_amount",
+   "fieldtype": "Currency",
+   "label": "Maximum Loan Amount"
+  },
+  {
+   "fieldname": "minimum_interest_rate",
+   "fieldtype": "Percent",
+   "label": "Minimum Interest Rate"
+  },
+  {
+   "fieldname": "maximum_interest_rate",
+   "fieldtype": "Percent",
+   "label": "Maximum Interest Rate"
+  },
+  {
+   "fieldname": "minimum_tenure_months",
+   "fieldtype": "Int",
+   "label": "Minimum Tenure Months"
+  },
+  {
+   "fieldname": "maximum_tenure_months",
+   "fieldtype": "Int",
+   "label": "Maximum Tenure Months"
+  },
+  {
+   "fieldtype": "Section Break",
+   "fieldname": "section_break_2"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "links": [
+  {
+   "link_doctype": "Loan Application",
+   "link_fieldname": "loan_scheme",
+   "group": "Loan"
+  },
+  {
+   "link_doctype": "Commission Slab Structure",
+   "link_fieldname": "loan_scheme",
+   "group": "Lender"
+  },
+  {
+   "link_doctype": "Lender Document Rule",
+   "link_fieldname": "loan_scheme",
+   "group": "Lender"
+  }
+ ],
+ "modified": "2026-11-24 10:12:37.427846",
+ "modified_by": "Administrator",
+ "module": "DSA Loan Portal",
+ "name": "Loan Scheme",
+ "owner": "Administrator",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "autoname": "field:scheme_code",
+ "naming_rule": "By fieldname",
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "export": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "DSA Admin",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "export": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "Branch Manager",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "export": 1
+  },
+  {
+   "role": "DSA Agent",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  },
+  {
+   "role": "Document Verifier",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  },
+  {
+   "role": "DSA Accounts",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "export": 1
+  },
+  {
+   "role": "Franchise Partner",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  }
+ ],
+ "title_field": "scheme_name",
+ "show_title_field_in_link": 1,
+ "search_fields": "scheme_name,lender"
+}

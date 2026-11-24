@@ -1,0 +1,287 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "creation": "2026-11-24 10:12:37.427846",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "branch_name",
+  "branch_code",
+  "branch_type",
+  "franchise",
+  "company",
+  "column_break_1",
+  "branch_manager",
+  "contact_number",
+  "email",
+  "opening_date",
+  "branch_status",
+  "section_break_1",
+  "address_line_1",
+  "address_line_2",
+  "column_break_2",
+  "city",
+  "state",
+  "pincode"
+ ],
+ "fields": [
+  {
+   "fieldname": "branch_name",
+   "fieldtype": "Data",
+   "label": "Branch Name",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "branch_code",
+   "fieldtype": "Data",
+   "label": "Branch Code",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "branch_type",
+   "fieldtype": "Select",
+   "label": "Branch Type",
+   "options": "Company Owned\nFranchise Owned\nFranchise Operated",
+   "reqd": 1,
+   "default": "Company Owned"
+  },
+  {
+   "fieldname": "franchise",
+   "fieldtype": "Link",
+   "label": "Franchise",
+   "options": "Franchise"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldtype": "Column Break",
+   "fieldname": "column_break_1"
+  },
+  {
+   "fieldname": "branch_manager",
+   "fieldtype": "Link",
+   "label": "Branch Manager",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "contact_number",
+   "fieldtype": "Data",
+   "label": "Contact Number"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "opening_date",
+   "fieldtype": "Date",
+   "label": "Opening Date"
+  },
+  {
+   "fieldname": "branch_status",
+   "fieldtype": "Select",
+   "label": "Branch Status",
+   "options": "Active\nInactive\nClosed",
+   "reqd": 1,
+   "default": "Active",
+   "in_list_view": 1
+  },
+  {
+   "fieldtype": "Section Break",
+   "label": "Address",
+   "fieldname": "section_break_1"
+  },
+  {
+   "fieldname": "address_line_1",
+   "fieldtype": "Data",
+   "label": "Address Line 1",
+   "reqd": 1
+  },
+  {
+   "fieldname": "address_line_2",
+   "fieldtype": "Data",
+   "label": "Address Line 2"
+  },
+  {
+   "fieldtype": "Column Break",
+   "fieldname": "column_break_2"
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "label": "City",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "state",
+   "fieldtype": "Data",
+   "label": "State",
+   "reqd": 1
+  },
+  {
+   "fieldname": "pincode",
+   "fieldtype": "Data",
+   "label": "Pincode",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "links": [
+  {
+   "link_doctype": "Document Checklist",
+   "link_fieldname": "dsa_branch",
+   "group": "Loan"
+  },
+  {
+   "link_doctype": "Loan Application",
+   "link_fieldname": "dsa_branch",
+   "group": "Loan"
+  },
+  {
+   "link_doctype": "Loan Customer",
+   "link_fieldname": "dsa_branch",
+   "group": "Loan"
+  },
+  {
+   "link_doctype": "Loan Lead",
+   "link_fieldname": "dsa_branch",
+   "group": "Loan"
+  },
+  {
+   "link_doctype": "Aadhaar Card Data",
+   "link_fieldname": "dsa_branch",
+   "group": "Documents"
+  },
+  {
+   "link_doctype": "Address Proof Data",
+   "link_fieldname": "dsa_branch",
+   "group": "Documents"
+  },
+  {
+   "link_doctype": "Bank Statement Data",
+   "link_fieldname": "dsa_branch",
+   "group": "Documents"
+  },
+  {
+   "link_doctype": "Form 16 Data",
+   "link_fieldname": "dsa_branch",
+   "group": "Documents"
+  },
+  {
+   "link_doctype": "ITR Data",
+   "link_fieldname": "dsa_branch",
+   "group": "Documents"
+  },
+  {
+   "link_doctype": "PAN Card Data",
+   "link_fieldname": "dsa_branch",
+   "group": "Documents"
+  },
+  {
+   "link_doctype": "Salary Slip Data",
+   "link_fieldname": "dsa_branch",
+   "group": "Documents"
+  },
+  {
+   "link_doctype": "Commission Calculation",
+   "link_fieldname": "dsa_branch",
+   "group": "Money"
+  },
+  {
+   "link_doctype": "Loan Disbursement",
+   "link_fieldname": "dsa_branch",
+   "group": "Money"
+  }
+ ],
+ "modified": "2026-11-24 10:12:37.427846",
+ "modified_by": "Administrator",
+ "module": "DSA Loan Portal",
+ "name": "DSA Branch",
+ "owner": "Administrator",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "autoname": "field:branch_code",
+ "naming_rule": "By fieldname",
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "export": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "DSA Admin",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "export": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "Branch Manager",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "export": 1
+  },
+  {
+   "role": "DSA Agent",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  },
+  {
+   "role": "Document Verifier",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  },
+  {
+   "role": "DSA Accounts",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "export": 1
+  },
+  {
+   "role": "Franchise Partner",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  }
+ ],
+ "title_field": "branch_name",
+ "show_title_field_in_link": 1,
+ "search_fields": "branch_name"
+}

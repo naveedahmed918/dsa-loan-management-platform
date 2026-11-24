@@ -1,0 +1,14 @@
+{
+  "doctype": "Page",
+  "name": "dsa-admin-dashboard",
+  "page_name": "dsa-admin-dashboard",
+  "title": "DSA Loan Portal",
+  "module": "DSA Loan Portal",
+  "standard": "Yes",
+  "roles": [
+    {
+      "role": "System Manager"
+    }
+  ],
+  "icon": "dashboard"
+}

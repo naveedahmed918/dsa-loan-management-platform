@@ -1,0 +1,74 @@
+[
+ {
+  "name": "HR-EMP-00001",
+  "first_name": "Priya",
+  "last_name": "Nair",
+  "employee_name": "Priya Nair",
+  "gender": "Female",
+  "date_of_birth": "1985-05-10",
+  "date_of_joining": "2025-04-01",
+  "status": "Active",
+  "company": "__COMPANY__",
+  "naming_series": "HR-EMP-"
+ },
+ {
+  "name": "HR-EMP-00002",
+  "first_name": "Rahul",
+  "last_name": "Kulkarni",
+  "employee_name": "Rahul Kulkarni",
+  "gender": "Male",
+  "date_of_birth": "1994-02-14",
+  "date_of_joining": "2025-04-01",
+  "status": "Active",
+  "company": "__COMPANY__",
+  "naming_series": "HR-EMP-"
+ },
+ {
+  "name": "HR-EMP-00003",
+  "first_name": "Vikram",
+  "last_name": "Desai",
+  "employee_name": "Vikram Desai",
+  "gender": "Male",
+  "date_of_birth": "1982-09-30",
+  "date_of_joining": "2025-04-01",
+  "status": "Active",
+  "company": "__COMPANY__",
+  "naming_series": "HR-EMP-"
+ },
+ {
+  "name": "HR-EMP-00004",
+  "first_name": "Sneha",
+  "last_name": "Joshi",
+  "employee_name": "Sneha Joshi",
+  "gender": "Female",
+  "date_of_birth": "1996-07-07",
+  "date_of_joining": "2025-04-01",
+  "status": "Active",
+  "company": "__COMPANY__",
+  "naming_series": "HR-EMP-"
+ },
+ {
+  "name": "HR-EMP-00005",
+  "first_name": "Anjali",
+  "last_name": "Patil",
+  "employee_name": "Anjali Patil",
+  "gender": "Female",
+  "date_of_birth": "1993-03-21",
+  "date_of_joining": "2025-04-01",
+  "status": "Active",
+  "company": "__COMPANY__",
+  "naming_series": "HR-EMP-"
+ },
+ {
+  "name": "HR-EMP-00006",
+  "first_name": "Rohit",
+  "last_name": "Pawar",
+  "employee_name": "Rohit Pawar",
+  "gender": "Male",
+  "date_of_birth": "1990-12-01",
+  "date_of_joining": "2025-04-01",
+  "status": "Active",
+  "company": "__COMPANY__",
+  "naming_series": "HR-EMP-"
+ }
+]

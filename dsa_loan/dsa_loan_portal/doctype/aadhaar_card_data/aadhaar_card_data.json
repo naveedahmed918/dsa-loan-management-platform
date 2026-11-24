@@ -1,0 +1,232 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "creation": "2026-11-24 10:12:37.427846",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "document_checklist",
+  "loan_application",
+  "applicant",
+  "dsa_branch",
+  "source_file",
+  "column_break_1",
+  "extraction_status",
+  "extracted_on",
+  "section_break_1",
+  "aadhaar_last_4",
+  "name_on_card",
+  "date_of_birth",
+  "gender",
+  "address"
+ ],
+ "fields": [
+  {
+   "fieldname": "document_checklist",
+   "fieldtype": "Link",
+   "label": "Document Checklist",
+   "options": "Document Checklist",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "loan_application",
+   "fieldtype": "Link",
+   "label": "Loan Application",
+   "options": "Loan Application",
+   "read_only": 1,
+   "fetch_from": "document_checklist.loan_application"
+  },
+  {
+   "fieldname": "applicant",
+   "fieldtype": "Link",
+   "label": "Applicant",
+   "options": "Loan Customer",
+   "read_only": 1,
+   "fetch_from": "document_checklist.applicant",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "dsa_branch",
+   "fieldtype": "Link",
+   "label": "DSA Branch",
+   "options": "DSA Branch",
+   "read_only": 1,
+   "fetch_from": "document_checklist.dsa_branch"
+  },
+  {
+   "fieldname": "source_file",
+   "fieldtype": "Attach",
+   "label": "Source File"
+  },
+  {
+   "fieldtype": "Column Break",
+   "fieldname": "column_break_1"
+  },
+  {
+   "fieldname": "extraction_status",
+   "fieldtype": "Select",
+   "label": "Extraction Status",
+   "options": "Pending\nExtracted\nVerified\nFailed",
+   "reqd": 1,
+   "default": "Pending",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "extracted_on",
+   "fieldtype": "Datetime",
+   "label": "Extracted On"
+  },
+  {
+   "fieldtype": "Section Break",
+   "label": "Extracted Data",
+   "fieldname": "section_break_1"
+  },
+  {
+   "fieldname": "aadhaar_last_4",
+   "fieldtype": "Data",
+   "label": "Aadhaar Last 4",
+   "permlevel": 1,
+   "length": 4,
+   "description": "Last 4 digits only. Never store the full Aadhaar number here."
+  },
+  {
+   "fieldname": "name_on_card",
+   "fieldtype": "Data",
+   "label": "Name On Card"
+  },
+  {
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "label": "Date Of Birth"
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Select",
+   "label": "Gender",
+   "options": "\nMale\nFemale\nOther"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Address"
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "links": [],
+ "modified": "2026-11-24 10:12:37.427846",
+ "modified_by": "Administrator",
+ "module": "DSA Loan Portal",
+ "name": "Aadhaar Card Data",
+ "owner": "Administrator",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "autoname": "AADH-.#####",
+ "naming_rule": "Expression (old style)",
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "export": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "DSA Admin",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "export": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "Branch Manager",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "export": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "DSA Agent",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "write": 1,
+   "create": 1
+  },
+  {
+   "role": "Franchise Partner",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "write": 1,
+   "create": 1
+  },
+  {
+   "role": "Document Verifier",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "write": 1,
+   "create": 1
+  },
+  {
+   "role": "System Manager",
+   "permlevel": 1,
+   "read": 1,
+   "write": 1
+  },
+  {
+   "role": "DSA Admin",
+   "permlevel": 1,
+   "read": 1,
+   "write": 1
+  },
+  {
+   "role": "Branch Manager",
+   "permlevel": 1,
+   "read": 1,
+   "write": 1
+  },
+  {
+   "role": "DSA Agent",
+   "permlevel": 1,
+   "read": 1,
+   "write": 1
+  },
+  {
+   "role": "Franchise Partner",
+   "permlevel": 1,
+   "read": 1,
+   "write": 1
+  },
+  {
+   "role": "Document Verifier",
+   "permlevel": 1,
+   "read": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "applicant"
+}

@@ -1,0 +1,207 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "creation": "2026-11-24 10:12:37.427846",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "clawback_date",
+  "commission_calculation",
+  "commission_invoice",
+  "loan_application",
+  "lender",
+  "column_break_1",
+  "clawback_reason",
+  "recovery_status",
+  "erpnext_purchase_invoice",
+  "section_break_1",
+  "original_commission",
+  "clawback_percentage",
+  "clawback_amount",
+  "column_break_2",
+  "gst_adjustment_amount",
+  "recovery_amount",
+  "recovery_date",
+  "section_break_2",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "clawback_date",
+   "fieldtype": "Date",
+   "label": "Clawback Date",
+   "reqd": 1,
+   "default": "Today"
+  },
+  {
+   "fieldname": "commission_calculation",
+   "fieldtype": "Link",
+   "label": "Commission Calculation",
+   "options": "Commission Calculation",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "commission_invoice",
+   "fieldtype": "Link",
+   "label": "Commission Invoice",
+   "options": "Commission Invoice"
+  },
+  {
+   "fieldname": "loan_application",
+   "fieldtype": "Link",
+   "label": "Loan Application",
+   "options": "Loan Application",
+   "reqd": 1,
+   "read_only": 1,
+   "fetch_from": "commission_calculation.loan_application"
+  },
+  {
+   "fieldname": "lender",
+   "fieldtype": "Link",
+   "label": "Lender",
+   "options": "Lender",
+   "reqd": 1,
+   "read_only": 1,
+   "fetch_from": "commission_calculation.lender",
+   "in_list_view": 1
+  },
+  {
+   "fieldtype": "Column Break",
+   "fieldname": "column_break_1"
+  },
+  {
+   "fieldname": "clawback_reason",
+   "fieldtype": "Select",
+   "label": "Clawback Reason",
+   "options": "Loan Cancellation\nLoan Closure\nEarly Default\nDuplicate Payment\nLender Reversal\nOther",
+   "reqd": 1
+  },
+  {
+   "fieldname": "recovery_status",
+   "fieldtype": "Select",
+   "label": "Recovery Status",
+   "options": "Pending\nPartially Recovered\nRecovered\nWaived\nDisputed",
+   "reqd": 1,
+   "default": "Pending",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "erpnext_purchase_invoice",
+   "fieldtype": "Link",
+   "label": "ERPNext Purchase Invoice",
+   "options": "Purchase Invoice"
+  },
+  {
+   "fieldtype": "Section Break",
+   "label": "Amounts",
+   "fieldname": "section_break_1"
+  },
+  {
+   "fieldname": "original_commission",
+   "fieldtype": "Currency",
+   "label": "Original Commission",
+   "reqd": 1,
+   "read_only": 1,
+   "fetch_from": "commission_calculation.gross_commission"
+  },
+  {
+   "fieldname": "clawback_percentage",
+   "fieldtype": "Percent",
+   "label": "Clawback Percentage"
+  },
+  {
+   "fieldname": "clawback_amount",
+   "fieldtype": "Currency",
+   "label": "Clawback Amount",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldtype": "Column Break",
+   "fieldname": "column_break_2"
+  },
+  {
+   "fieldname": "gst_adjustment_amount",
+   "fieldtype": "Currency",
+   "label": "GST Adjustment Amount"
+  },
+  {
+   "fieldname": "recovery_amount",
+   "fieldtype": "Currency",
+   "label": "Recovery Amount"
+  },
+  {
+   "fieldname": "recovery_date",
+   "fieldtype": "Date",
+   "label": "Recovery Date"
+  },
+  {
+   "fieldtype": "Section Break",
+   "fieldname": "section_break_2"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "links": [],
+ "modified": "2026-11-24 10:12:37.427846",
+ "modified_by": "Administrator",
+ "module": "DSA Loan Portal",
+ "name": "Commission Clawback",
+ "owner": "Administrator",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "autoname": "CLB-.YYYY.-.#####",
+ "naming_rule": "Expression (old style)",
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "export": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "DSA Admin",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "export": 1
+  },
+  {
+   "role": "DSA Accounts",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "export": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "Branch Manager",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "export": 1
+  }
+ ],
+ "track_changes": 1,
+ "search_fields": "commission_calculation,lender"
+}

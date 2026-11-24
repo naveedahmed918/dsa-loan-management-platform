@@ -1,0 +1,62 @@
+[
+ {
+  "name": "Public Sector Bank",
+  "creation": "2026-11-24 10:18:05.502834",
+  "modified": "2026-11-24 10:18:05.502834",
+  "docstatus": 0,
+  "idx": 0,
+  "lender_type_name": "Public Sector Bank",
+  "type_code": "PSB",
+  "description": "Public sector banking institution in India.",
+  "is_active": 1,
+  "doctype": "Lender Type"
+ },
+ {
+  "name": "Private Sector Bank",
+  "creation": "2026-11-24 10:18:05.902429",
+  "modified": "2026-11-24 10:18:05.902429",
+  "docstatus": 0,
+  "idx": 0,
+  "lender_type_name": "Private Sector Bank",
+  "type_code": "PVT",
+  "description": "Privately owned banking institution in India.",
+  "is_active": 1,
+  "doctype": "Lender Type"
+ },
+ {
+  "name": "Housing Finance Company",
+  "creation": "2026-11-24 10:18:05.905722",
+  "modified": "2026-11-24 10:18:05.905722",
+  "docstatus": 0,
+  "idx": 0,
+  "lender_type_name": "Housing Finance Company",
+  "type_code": "HFC",
+  "description": "Company providing housing finance and home loan services in India.",
+  "is_active": 1,
+  "doctype": "Lender Type"
+ },
+ {
+  "name": "Small Finance Bank",
+  "creation": "2026-11-24 10:59:34.624106",
+  "modified": "2026-11-24 10:59:34.624106",
+  "docstatus": 0,
+  "idx": 0,
+  "lender_type_name": "Small Finance Bank",
+  "type_code": "SFB",
+  "description": "RBI-licensed small finance bank.",
+  "is_active": 1,
+  "doctype": "Lender Type"
+ },
+ {
+  "name": "Non-Banking Financial Company",
+  "creation": "2026-11-24 10:59:34.933142",
+  "modified": "2026-11-24 10:59:34.933142",
+  "docstatus": 0,
+  "idx": 0,
+  "lender_type_name": "Non-Banking Financial Company",
+  "type_code": "NBFC",
+  "description": "RBI-registered NBFC offering home and property loans.",
+  "is_active": 1,
+  "doctype": "Lender Type"
+ }
+]

@@ -1,0 +1,187 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "creation": "2026-11-24 10:12:37.427846",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "login_title",
+  "lender",
+  "lender_branch",
+  "portal_name",
+  "portal_url",
+  "login_username",
+  "column_break_1",
+  "assigned_employee",
+  "access_type",
+  "access_status",
+  "access_start_date",
+  "access_end_date",
+  "last_access_date",
+  "section_break_1",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "login_title",
+   "fieldtype": "Data",
+   "label": "Login Title",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "lender",
+   "fieldtype": "Link",
+   "label": "Lender",
+   "options": "Lender",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "lender_branch",
+   "fieldtype": "Link",
+   "label": "Lender Branch",
+   "options": "Lender Branch"
+  },
+  {
+   "fieldname": "portal_name",
+   "fieldtype": "Data",
+   "label": "Portal Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "portal_url",
+   "fieldtype": "Data",
+   "label": "Portal Url"
+  },
+  {
+   "fieldname": "login_username",
+   "fieldtype": "Data",
+   "label": "Login Username",
+   "description": "Username only. Never store passwords here."
+  },
+  {
+   "fieldtype": "Column Break",
+   "fieldname": "column_break_1"
+  },
+  {
+   "fieldname": "assigned_employee",
+   "fieldtype": "Link",
+   "label": "Assigned Employee",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fieldname": "access_type",
+   "fieldtype": "Select",
+   "label": "Access Type",
+   "options": "Individual\nShared\nAPI Integration",
+   "reqd": 1,
+   "default": "Individual"
+  },
+  {
+   "fieldname": "access_status",
+   "fieldtype": "Select",
+   "label": "Access Status",
+   "options": "Active\nInactive\nLocked\nExpired",
+   "reqd": 1,
+   "default": "Active",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "access_start_date",
+   "fieldtype": "Date",
+   "label": "Access Start Date"
+  },
+  {
+   "fieldname": "access_end_date",
+   "fieldtype": "Date",
+   "label": "Access End Date"
+  },
+  {
+   "fieldname": "last_access_date",
+   "fieldtype": "Datetime",
+   "label": "Last Access Date"
+  },
+  {
+   "fieldtype": "Section Break",
+   "fieldname": "section_break_1"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "links": [],
+ "modified": "2026-11-24 10:12:37.427846",
+ "modified_by": "Administrator",
+ "module": "DSA Loan Portal",
+ "name": "Lender Login",
+ "owner": "Administrator",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "autoname": "LLOG-.#####",
+ "naming_rule": "Expression (old style)",
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "export": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "DSA Admin",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "export": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "Branch Manager",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "export": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "DSA Agent",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  },
+  {
+   "role": "DSA Accounts",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "export": 1
+  }
+ ],
+ "track_changes": 1,
+ "title_field": "login_title",
+ "show_title_field_in_link": 1,
+ "search_fields": "login_title,lender"
+}

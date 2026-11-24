@@ -1,0 +1,560 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "creation": "2026-11-24 10:12:37.427846",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "application_date",
+  "loan_lead",
+  "primary_customer",
+  "lender",
+  "lender_branch",
+  "column_break_1",
+  "loan_product",
+  "loan_scheme",
+  "loan_type",
+  "application_status",
+  "section_break_1",
+  "company",
+  "franchise",
+  "dsa_branch",
+  "column_break_2",
+  "branch_manager",
+  "assigned_agent",
+  "section_break_2",
+  "requested_loan_amount",
+  "requested_tenure_months",
+  "expected_interest_rate",
+  "estimated_emi",
+  "loan_purpose",
+  "column_break_3",
+  "property_type",
+  "property_value",
+  "property_address",
+  "property_city",
+  "property_state",
+  "property_pincode",
+  "section_break_3",
+  "co_applicants",
+  "section_break_4",
+  "lender_application_number",
+  "lender_submission_date",
+  "sanction_date",
+  "sanctioned_amount",
+  "column_break_4",
+  "sanctioned_interest_rate",
+  "sanctioned_tenure_months",
+  "sanction_valid_until",
+  "rejection_reason",
+  "application_remarks",
+  "section_break_5",
+  "workflow_state",
+  "manager_approval",
+  "column_break_5",
+  "manager_approval_date",
+  "final_status",
+  "section_break_6",
+  "sales_invoice",
+  "invoice_status",
+  "invoice_amount",
+  "column_break_6",
+  "invoice_emailed_on",
+  "invoice_email_recipients",
+  "invoice_communication",
+  "invoice_error"
+ ],
+ "fields": [
+  {
+   "fieldname": "application_date",
+   "fieldtype": "Date",
+   "label": "Application Date",
+   "reqd": 1,
+   "default": "Today"
+  },
+  {
+   "fieldname": "loan_lead",
+   "fieldtype": "Link",
+   "label": "Loan Lead",
+   "options": "Loan Lead",
+   "reqd": 1
+  },
+  {
+   "fieldname": "primary_customer",
+   "fieldtype": "Link",
+   "label": "Primary Customer",
+   "options": "Loan Customer",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "lender",
+   "fieldtype": "Link",
+   "label": "Lender",
+   "options": "Lender",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "lender_branch",
+   "fieldtype": "Link",
+   "label": "Lender Branch",
+   "options": "Lender Branch"
+  },
+  {
+   "fieldtype": "Column Break",
+   "fieldname": "column_break_1"
+  },
+  {
+   "fieldname": "loan_product",
+   "fieldtype": "Link",
+   "label": "Loan Product",
+   "options": "Loan Product",
+   "reqd": 1
+  },
+  {
+   "fieldname": "loan_scheme",
+   "fieldtype": "Link",
+   "label": "Loan Scheme",
+   "options": "Loan Scheme"
+  },
+  {
+   "fieldname": "loan_type",
+   "fieldtype": "Select",
+   "label": "Loan Type",
+   "options": "Home Purchase\nHome Loan\nHome Improvement\nLoan Against Property\nBalance Transfer\nPlot Purchase\nPlot + Construction",
+   "reqd": 1
+  },
+  {
+   "fieldname": "application_status",
+   "fieldtype": "Select",
+   "label": "Application Status",
+   "options": "Open\nIn Progress\nOn Hold\nCompleted\nCancelled",
+   "reqd": 1,
+   "default": "Open"
+  },
+  {
+   "fieldtype": "Section Break",
+   "label": "DSA Assignment",
+   "fieldname": "section_break_1"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "franchise",
+   "fieldtype": "Link",
+   "label": "Franchise",
+   "options": "Franchise"
+  },
+  {
+   "fieldname": "dsa_branch",
+   "fieldtype": "Link",
+   "label": "DSA Branch",
+   "options": "DSA Branch",
+   "reqd": 1
+  },
+  {
+   "fieldtype": "Column Break",
+   "fieldname": "column_break_2"
+  },
+  {
+   "fieldname": "branch_manager",
+   "fieldtype": "Link",
+   "label": "Branch Manager",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "assigned_agent",
+   "fieldtype": "Link",
+   "label": "Assigned Agent",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fieldtype": "Section Break",
+   "label": "Loan Requirements",
+   "fieldname": "section_break_2"
+  },
+  {
+   "fieldname": "requested_loan_amount",
+   "fieldtype": "Currency",
+   "label": "Requested Loan Amount",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "requested_tenure_months",
+   "fieldtype": "Int",
+   "label": "Requested Tenure Months",
+   "reqd": 1
+  },
+  {
+   "fieldname": "expected_interest_rate",
+   "fieldtype": "Percent",
+   "label": "Expected Interest Rate"
+  },
+  {
+   "fieldname": "estimated_emi",
+   "fieldtype": "Currency",
+   "label": "Estimated EMI",
+   "read_only": 1
+  },
+  {
+   "fieldname": "loan_purpose",
+   "fieldtype": "Select",
+   "label": "Loan Purpose",
+   "options": "Purchase\nConstruction\nPlot + Construction\nRenovation\nBalance Transfer\nTop-up\nOther",
+   "reqd": 1
+  },
+  {
+   "fieldtype": "Column Break",
+   "fieldname": "column_break_3"
+  },
+  {
+   "fieldname": "property_type",
+   "fieldtype": "Select",
+   "label": "Property Type",
+   "options": "\nFlat\nIndependent House\nVilla\nPlot\nCommercial\nOther"
+  },
+  {
+   "fieldname": "property_value",
+   "fieldtype": "Currency",
+   "label": "Property Value"
+  },
+  {
+   "fieldname": "property_address",
+   "fieldtype": "Small Text",
+   "label": "Property Address"
+  },
+  {
+   "fieldname": "property_city",
+   "fieldtype": "Data",
+   "label": "Property City"
+  },
+  {
+   "fieldname": "property_state",
+   "fieldtype": "Data",
+   "label": "Property State"
+  },
+  {
+   "fieldname": "property_pincode",
+   "fieldtype": "Data",
+   "label": "Property Pincode"
+  },
+  {
+   "fieldtype": "Section Break",
+   "label": "Applicant Details",
+   "fieldname": "section_break_3"
+  },
+  {
+   "fieldname": "co_applicants",
+   "fieldtype": "Table",
+   "label": "Co Applicants",
+   "options": "Co-Applicant"
+  },
+  {
+   "fieldtype": "Section Break",
+   "label": "Lender Processing",
+   "collapsible": 1,
+   "fieldname": "section_break_4"
+  },
+  {
+   "fieldname": "lender_application_number",
+   "fieldtype": "Data",
+   "label": "Lender Application Number"
+  },
+  {
+   "fieldname": "lender_submission_date",
+   "fieldtype": "Date",
+   "label": "Lender Submission Date"
+  },
+  {
+   "fieldname": "sanction_date",
+   "fieldtype": "Date",
+   "label": "Sanction Date",
+   "mandatory_depends_on": "eval:doc.final_status=='Sanctioned'"
+  },
+  {
+   "fieldname": "sanctioned_amount",
+   "fieldtype": "Currency",
+   "label": "Sanctioned Amount",
+   "mandatory_depends_on": "eval:doc.final_status=='Sanctioned'"
+  },
+  {
+   "fieldtype": "Column Break",
+   "fieldname": "column_break_4"
+  },
+  {
+   "fieldname": "sanctioned_interest_rate",
+   "fieldtype": "Percent",
+   "label": "Sanctioned Interest Rate"
+  },
+  {
+   "fieldname": "sanctioned_tenure_months",
+   "fieldtype": "Int",
+   "label": "Sanctioned Tenure Months"
+  },
+  {
+   "fieldname": "sanction_valid_until",
+   "fieldtype": "Date",
+   "label": "Sanction Valid Until"
+  },
+  {
+   "fieldname": "rejection_reason",
+   "fieldtype": "Small Text",
+   "label": "Rejection Reason",
+   "mandatory_depends_on": "eval:doc.final_status=='Rejected'"
+  },
+  {
+   "fieldname": "application_remarks",
+   "fieldtype": "Small Text",
+   "label": "Application Remarks"
+  },
+  {
+   "fieldtype": "Section Break",
+   "label": "Workflow",
+   "fieldname": "section_break_5"
+  },
+  {
+   "fieldname": "workflow_state",
+   "fieldtype": "Link",
+   "label": "Workflow State",
+   "options": "Workflow State",
+   "read_only": 1
+  },
+  {
+   "fieldname": "manager_approval",
+   "fieldtype": "Select",
+   "label": "Manager Approval",
+   "options": "\nPending\nApproved\nRejected"
+  },
+  {
+   "fieldtype": "Column Break",
+   "fieldname": "column_break_5"
+  },
+  {
+   "fieldname": "manager_approval_date",
+   "fieldtype": "Datetime",
+   "label": "Manager Approval Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "final_status",
+   "fieldtype": "Select",
+   "label": "Final Status",
+   "options": "Draft\nDocuments Pending\nReady for Submission\nSubmitted\nUnder Review\nQuery Raised\nSanctioned\nRejected\nOn Hold\nPartially Disbursed\nDisbursed\nWithdrawn\nClosed",
+   "reqd": 1,
+   "default": "Draft",
+   "in_list_view": 1
+  },
+  {
+   "fieldtype": "Section Break",
+   "label": "Lender Invoice",
+   "collapsible": 1,
+   "description": "Filled automatically once the loan is Disbursed",
+   "fieldname": "section_break_6"
+  },
+  {
+   "fieldname": "sales_invoice",
+   "fieldtype": "Link",
+   "label": "Sales Invoice",
+   "options": "Sales Invoice",
+   "read_only": 1
+  },
+  {
+   "fieldname": "invoice_status",
+   "fieldtype": "Select",
+   "label": "Invoice Status",
+   "options": "\nAwaiting Commission\nInvoice Created\nEmailed\nEmail Pending\nFailed",
+   "read_only": 1
+  },
+  {
+   "fieldname": "invoice_amount",
+   "fieldtype": "Currency",
+   "label": "Invoice Amount",
+   "read_only": 1
+  },
+  {
+   "fieldtype": "Column Break",
+   "fieldname": "column_break_6"
+  },
+  {
+   "fieldname": "invoice_emailed_on",
+   "fieldtype": "Datetime",
+   "label": "Invoice Emailed On",
+   "read_only": 1
+  },
+  {
+   "fieldname": "invoice_email_recipients",
+   "fieldtype": "Small Text",
+   "label": "Invoice Email Recipients",
+   "read_only": 1
+  },
+  {
+   "fieldname": "invoice_communication",
+   "fieldtype": "Link",
+   "label": "Invoice Email",
+   "options": "Communication",
+   "read_only": 1
+  },
+  {
+   "fieldname": "invoice_error",
+   "fieldtype": "Small Text",
+   "label": "Invoice Error",
+   "read_only": 1,
+   "depends_on": "eval:doc.invoice_error"
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "links": [
+  {
+   "link_doctype": "Document Checklist",
+   "link_fieldname": "loan_application",
+   "group": "Loan"
+  },
+  {
+   "link_doctype": "Aadhaar Card Data",
+   "link_fieldname": "loan_application",
+   "group": "Documents"
+  },
+  {
+   "link_doctype": "Address Proof Data",
+   "link_fieldname": "loan_application",
+   "group": "Documents"
+  },
+  {
+   "link_doctype": "Bank Statement Data",
+   "link_fieldname": "loan_application",
+   "group": "Documents"
+  },
+  {
+   "link_doctype": "Form 16 Data",
+   "link_fieldname": "loan_application",
+   "group": "Documents"
+  },
+  {
+   "link_doctype": "ITR Data",
+   "link_fieldname": "loan_application",
+   "group": "Documents"
+  },
+  {
+   "link_doctype": "PAN Card Data",
+   "link_fieldname": "loan_application",
+   "group": "Documents"
+  },
+  {
+   "link_doctype": "Salary Slip Data",
+   "link_fieldname": "loan_application",
+   "group": "Documents"
+  },
+  {
+   "link_doctype": "Commission Calculation",
+   "link_fieldname": "loan_application",
+   "group": "Money"
+  },
+  {
+   "link_doctype": "Commission Clawback",
+   "link_fieldname": "loan_application",
+   "group": "Money"
+  },
+  {
+   "link_doctype": "Loan Disbursement",
+   "link_fieldname": "loan_application",
+   "group": "Money"
+  }
+ ],
+ "modified": "2026-11-24 10:12:37.427846",
+ "modified_by": "Administrator",
+ "module": "DSA Loan Portal",
+ "name": "Loan Application",
+ "owner": "Administrator",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "autoname": "LAPP-.YYYY.-.#####",
+ "naming_rule": "Expression (old style)",
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "export": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "DSA Admin",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "export": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "Branch Manager",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "export": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "DSA Agent",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "write": 1,
+   "create": 1
+  },
+  {
+   "role": "Franchise Partner",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "write": 1,
+   "create": 1
+  },
+  {
+   "role": "Document Verifier",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  },
+  {
+   "role": "DSA Accounts",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "export": 1
+  }
+ ],
+ "track_changes": 1,
+ "title_field": "primary_customer",
+ "show_title_field_in_link": 1,
+ "search_fields": "primary_customer,lender"
+}

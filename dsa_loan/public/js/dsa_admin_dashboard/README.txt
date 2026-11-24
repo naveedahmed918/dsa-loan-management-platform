@@ -1,0 +1,1 @@
+The dashboard bundle is loaded by the standard Frappe Page. Keep this folder for future modular JS files.
